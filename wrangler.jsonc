@@ -1,0 +1,45 @@
+{
+  "name": "flaredrive",
+  "compatibility_date": "2026-01-14",
+  "main": "./backend/index.ts",
+  "assets": {
+    "not_found_handling": "single-page-application",
+  },
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      "binding": "D1",
+      "database_name": "flaredrive",
+      "database_id": "fff9cb3a-2e32-4858-8c7f-5c0fb75913f4",
+      "migrations_dir": "drizzle",
+    },
+  ],
+  "kv_namespaces": [
+    {
+      "binding": "KV",
+      "id": "ca351de571ae4dd9999316524f1f57c6",
+    },
+  ],
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SESSION_REVOCATION",
+        "class_name": "SessionRevocationDO",
+      },
+    ],
+  },
+  "migrations": [
+    {
+      "tag": "do-session-revocation-v1",
+      "new_classes": ["SessionRevocationDO"],
+    },
+  ],
+  "vars": {
+    "ALLOW_REGISTER": "false",
+  },
+  "observability": {
+    "logs": {
+      "enabled": true,
+    },
+  },
+}
